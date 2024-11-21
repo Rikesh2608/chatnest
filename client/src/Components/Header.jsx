@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import user from "./../assets/userLogo.svg";
+import user from "./../assets/userlogo.svg";
 import settings from "./../assets/settings.svg";
 import logout from "./../assets/logout.svg";
 import { Context } from "../StoreContext";
