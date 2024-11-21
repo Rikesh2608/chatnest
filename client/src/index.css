@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap&family=Outfit:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --white: #fff;
+  --black: #000;
+  --gray-50: #f9f9f9;
+  --gray-100: #ececec;
+  --gray-200: #e3e3e3;
+  --gray-300: #cdcdcd;
+  --gray-400: #b4b4b4;
+  --gray-500: #9b9b9b;
+  --gray-600: #676767;
+  --gray-700: #424242;
+  --gray-750: #2f2f2f;
+  --gray-800: #212121;
+  --gray-900: #171717;
+  --gray-950: #0d0d0d;
+  --red-500: #ef4444;
+  --red-700: #b91c1c;
+  --brand-purple: #ab68ff;
+  --bg-primary:#080715 ;
+  /* #080715 */
+  --bg-secondary:#2c2937;
+}
+
+html {
+  font-family: Roboto;
+  /* background-color: #0e0c16; */
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+*,a {
+  text-decoration: none;
+  color: inherit;
+}
+body,
+input {
+  overflow-x: hidden;
+  font-family: "Roboto", 'Helvetica Neue', Arial, sans-serif,'Apple Color Emoji';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-family: "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+  font-weight: 500;
+}
+html{
+  scrollbar-width: none !important;
+}
+html::-webkit-scrollbar{
+  display: none;
+}
+.custom-height {
+  min-height: calc(100vh - 280px);
+}
+
+.model-answer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #ececec;
+}
+.model-answer > p > strong {
+  font-size: 20px;
+}
+strong{
+    font-weight: 500;
+}
+.model-answer p {
+  line-height: 1.8;
+}
+.model-answer li > code {
+    position: relative;
+  font-weight: 600;
+  padding: 0px 15px !important;
+  color: white;
+  border-radius: 5px;
+}
+.model-answer li > code::before,.model-answer li > code::after{
+    position: absolute;
+    content: '`';
+    font-weight: bold;
+    top: -2px;
+}
+.model-answer li > code::before{
+    left: 5px;
+}
+.model-answer li > code::after{
+    right: 5px;
+}
+.model-answer > ol {
+  list-style: decimal;
+}
+.custom-scrollbar,pre,html,.table-scroll{
+  scrollbar-color: #2c2937 #0e0c16;
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+}
+pre {
+  max-width: calc(48rem - 56px);
+  color: rgb(236, 236, 236);
+  line-height: 1.7;
+  margin: 0 !important;
+}
+.index-bg{
+  background-image: url("./assets/orbital.png");
+  background-size: cover;
+  background-position: 0 10%;
+  background-repeat: no-repeat;
+}
+.bg-img{
+  background-image: url("./assets/bg.png");
+  background-size: 70%;
+  background-position: left;
+  animation: bg-img 8s linear infinite;
+  height: 60vh;
+  display: flex;
+  padding: 50px;
+  border-radius: 30px;
+}
+.bg-img>img{
+  animation: imgDancing 3s infinite;
+  object-fit: contain;
+}
+
+.bottom-to-top{
+  /* transform: translateY(100px); */
+  animation: moving 2s ;
+  /* animation-delay: 1s; */
+}
+.bottom-to-top:nth-child(2){
+  animation-duration: 2.1s;
+}
+.bottom-to-top:nth-child(3){
+  animation-duration: 2.2s;
+}
+.bottom-to-top:nth-child(4){
+  animation-duration: 2.3s;
+}
+.sidebar-scrollbar{
+  overflow-y: auto;
+  overflow-x: visible;
+}
+@keyframes moving {
+  0% {
+    transform: translateY(50px);
+  }
+  50%{
+    transform: translateY(-20px);
+  }
+  75%{
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes imgDancing {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+}
+
+@keyframes bg-img{
+  0%{
+    background-position: top;
+  }
+  50%{
+    background-position: bottom;
+  }
+  100%{
+    background-position: top;
+  }
+}
+.codeblock{
+  min-width: 712px;
+}
+@media (width<824px) {
+  .codeblock,
+  pre {
+    max-width: calc(100vw - 120px) !important;
+    min-width: calc(100vw - 120px) !important;
+  }
+}
+ul > li {
+  list-style: disc;
+}
+ol,
+ul {
+  padding-block: 10px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+li::marker {
+  list-style-position: inside;
+}
+li {
+  line-height: 1.8;
+}
+body:has(.overlay),body:has(.pageloading){
+  overflow: hidden;
+}
+.model-answer > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+li > p > strong {
+  display: block;
+  margin: 10px 0;
+}
+
+ol > li::marker {
+  font-weight: bold;
+  list-style-position: outside;
+}
+.model-answer a{
+  color: dodgerblue;
+}
+.table-scroll{
+  overflow-x:auto;
+  max-width: calc(48rem - 56px);
+}
+table{
+  table-layout: auto;
+  width: 100%;
+}
+
