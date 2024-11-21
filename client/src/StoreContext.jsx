@@ -12,7 +12,7 @@ const StoreContext = ({ children }) => {
   const [chats, setChats] = useState({
     history: [],
   });
-  const uri = "http://localhost:3000";
+  const uri = "https://chatnest-backend-ky2l.onrender.com";
   const [loading, setLoading] = useState(false);
   const [answer, setAnswer] = useState("");
   const [user, setUser] = useState({
@@ -206,7 +206,7 @@ const StoreContext = ({ children }) => {
 
   const deleteImage = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/media/delete/${id}`);
+      await axios.delete(`https://chatnest-backend-ky2l.onrender.com/media/delete/${id}`);
     } catch (error) {
       console.log(error);
     }

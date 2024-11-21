@@ -68,7 +68,7 @@ const SignIn = ({setLogin}) => {
   const loginUser = async (email, password) => {
     try {
       setPageLoading(true)
-      const res = await axios.post("http://localhost:3000/user/login", {
+      const res = await axios.post("https://chatnest-backend-ky2l.onrender.com/user/login", {
         email,
         password,
       });
@@ -145,7 +145,7 @@ const SignUp = ({setLogin}) => {
   const registerUser = async (name, email, password) => {
     try {
       setPageLoading(true)
-      const response = await axios.post("http://localhost:3000/user/register", {
+      const response = await axios.post("https://chatnest-backend-ky2l.onrender.com/user/register", {
         username: name,
         email,
         password,

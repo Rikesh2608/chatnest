@@ -9,7 +9,7 @@ const urlEndpoint = "https://ik.imagekit.io/z4cybkytu/";
 const Imagekit = ({ setMedia, ikUploadRefTest }) => {
   const authenticator = async () => {
     try {
-      const response = await fetch("http://localhost:3000/img/upload");
+      const response = await fetch("https://chatnest-backend-ky2l.onrender.com/img/upload");
 
       if (!response.ok) {
         const errorText = await response.text();
